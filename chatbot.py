@@ -4,10 +4,10 @@ from telepot.loop import MessageLoop
 def handle(msg):
     print(msg)
     command=msg['text']
-    if command=='salude':
-        bot.sendMessage(902264668, 'hola')
+    if command=='hola':
+        bot.sendMessage(msg['from']['id'], 'Hola '+ msg['from']['first_name'] +' soy Esclavont, tu asistente virtual')
     if command=='foto':
-        bot.sendPhoto(902264668,photo=open('im1.jpg','rb'))
+        bot.sendPhoto(msg['from']['id'],photo=open('im1.jpg','rb'))
 
         
         
