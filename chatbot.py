@@ -100,10 +100,112 @@ def handle(msg):
         elif paso==15:
             respuesta7a=verificar(command)
             paso=16
-            #TODO: seguir
-            bot.sendMessage(msg['from']['id'],'...\n1. Sí\n2. No\n3. No sé')
+            bot.sendMessage(msg['from']['id'],'¿Recibes tu salario y otros beneficios a tiempo?\n1. Sí\n2. No\n3. No sé')
+        elif paso==16:
+            respuesta7b=verificar(command)
+            paso=17
+            bot.sendMessage(msg['from']['id'],'¿Te piden trabajar horas extras excesivas?\n1. Sí\n2. No\n3. No sé')
+        elif paso==17:
+            respuesta7c=verificar(command)
+            paso=18
+            bot.sendMessage(msg['from']['id'],'¿Tuviste que pagar alguna cuota para obtener tu trabajo?\n1. Sí\n2. No\n3. No sé')
+        elif paso==18:
+            respuesta7d=verificar(command)
+            paso=19
+            bot.sendMessage(msg['from']['id'],'¿Te sientes en alguna forma de deuda por condiciones vinculadas a tu empleo?\n1. Sí\n2. No\n3. No sé')
+        elif paso==19:
+            respuesta7e=verificar(command)
+            paso=20
+            bot.sendMessage(msg['from']['id'],'¿Tu lugar de trabajo y condiciones de vida son seguros y sanitarios?\n1. Sí\n2. No\n3. No sé')
+        elif paso==20:
+            respuesta7f=verificar(command)
+            paso=21
+            bot.sendMessage(msg['from']['id'],'¿Tu contrato está redactado en un idioma que entiendes?\n1. Sí\n2. No\n3. No sé')
+        elif paso==21:
+            respuesta7g=verificar(command)
+            paso=22
+            bot.sendMessage(msg['from']['id'],'¿Tienes acceso a tu pasaporte o documentos de identidad cuando lo necesitas?\n1. Sí\n2. No\n3. No sé')
+        elif paso==22:
+            respuesta7h=verificar(command)
+            paso=23
+            bot.sendMessage(msg['from']['id'],'¿Te sientes libre de dejar tu trabajo o alojamiento cuando lo deseas?\n1. Sí\n2. No\n3. No sé')
+        elif paso==23:
+            respuesta7i=verificar(command)
+            paso=24
+            bot.sendMessage(msg['from']['id'],'¿Crees que tus intereses están adecuadamente representados, por ejemplo, a través de sindicatos o asociaciones laborales?\n1. Sí\n2. No\n3. No sé')
+        elif paso==24:
+            respuesta7j=verificar(command)
+            paso=25
+            bot.sendMessage(msg['from']['id'],'¿Se verifica la edad de todos los trabajadores para prevenir el trabajo infantil?\n1. Sí\n2. No\n3. No sé')
+        elif paso==25:
+            respuesta7k=verificar(command)
+            paso=26
+            bot.sendMessage(msg['from']['id'],'¿Existe discriminación en el lugar de trabajo?\n1. Sí\n2. No\n3. No sé')
+        elif paso==26:
+            respuesta7l=verificar(command)
+            paso=27
+            bot.sendMessage(msg['from']['id'],'Módulo 8: Compromiso de proveedores y debida diligencia')
+            bot.sendMessage(msg['from']['id'],'Nos gustaría conocer tu percepción sobre cómo nuestra empresa evalúa y maneja los riesgos de esclavitud moderna en nuestra cadena de suministro')
+            bot.sendMessage(msg['from']['id'],'¿Sabes si hacemos preguntas sobre las prácticas laborales y políticas de nuestros proveedores?')
+        elif paso==27:
+            respuesta8a=verificar(command)
+            paso=28
+            bot.sendMessage(msg['from']['id'],'¿Estás al tanto de si realizamos visitas o auditorías sociales en los sitios de nuestros proveedores?\n1. Sí\n2. No\n3. No sé')
+        elif paso==28:
+            respuesta8b=verificar(command)
+            paso=29
+            bot.sendMessage(msg['from']['id'],'¿Sabes si interactuamos con los trabajadores de nuestros proveedores a través de encuestas, entrevistas o aplicaciones móviles?\n1. Sí\n2. No\n3. No sé')
+        elif paso==29:
+            respuesta8c=verificar(command)
+            paso=30
+            bot.sendMessage(msg['from']['id'],'¿Utilizamos otras herramientas de evaluación de riesgos, como la trazabilidad o herramientas de mapeo de riesgos?\n1. Sí\n2. No\n3. No sé')
+        elif paso==30:
+            respuesta8d=verificar(command)
+            paso=31
+            bot.sendMessage(msg['from']['id'],'¿Participamos con organizaciones de la sociedad civil para comprender mejor los riesgos?\n1. Sí\n2. No\n3. No sé')
+        elif paso==31:
+            respuesta8e=verificar(command)
+            paso=32
+            bot.sendMessage(msg['from']['id'],'¿Estás informado si nuestra empresa publica una lista de sus proveedores?\n1. Sí\n2. No\n3. No sé')
+        elif paso==32:
+            respuesta8f=verificar(command)
+            paso=33
+            bot.sendMessage(msg['from']['id'],'Módulo 9: 9. Prácticas de compra')
+            bot.sendMessage(msg['from']['id'],'En relación con nuestras prácticas de compra, como los precios de los contratos, las previsiones y los incentivos a proveedores, ¿crees que estas prácticas podrían aumentar los riesgos para los trabajadores de nuestros proveedores?\n1. Sí\n2. No\n3. No sé')
+        elif paso==33:
+            respuesta9=verificar(command)
+            paso=34
+            bot.sendMessage(msg['from']['id'],'Módulo 10: Evaluación y Medición')
+            bot.sendMessage(msg['from']['id'],'Nos interesa saber tu opinión sobre los mecanismos de quejas disponibles')
+            bot.sendMessage(msg['from']['id'],'¿Estás al tanto de algún proceso de quejas que nosotros, como empleados, podemos usar?\n1. Sí\n2. No\n3. No sé')
+        elif paso==34:
+            respuesta10a=verificar(command)
+            paso=35
+            bot.sendMessage(msg['from']['id'],'¿Sabes si existe algún mecanismo de quejas que puedan utilizar partes externas como proveedores, trabajadores de nuestros proveedores y comunidades afectadas por nuestras actividades?\n1. Sí\n2. No\n3. No sé')
+        elif paso==35:
+            respuesta10b=verificar(command)
+            paso=36
+            bot.sendMessage(msg['from']['id'],'¿Conoces si requerimos que nuestros proveedores clave tengan mecanismos de quejas y que compartan información sobre las quejas relacionadas con nuestro negocio?\n1. Sí\n2. No\n3. No sé')
+        elif paso==36:
+            respuesta10c=verificar(command)
+            paso=37
+            bot.sendMessage(msg['from']['id'],'Módulo 11: Respuesta y remediación')
+            bot.sendMessage(msg['from']['id'],'Queremos saber tu percepción sobre cómo respondemos a situaciones problemáticas relacionadas con nuestra empresa')
+            bot.sendMessage(msg['from']['id'],'¿Estás informado sobre algún proceso documentado que describa nuestra responsabilidad para remediar daños que hayamos causado, contribuido o que estén directamente vinculados a nuestras actividades?\n1. Sí\n2. No\n3. No sé')
+        elif paso==37:
+            respuesta11a=verificar(command)
+            paso=38
+            bot.sendMessage(msg['from']['id'],'¿Este proceso incluye pasos claros para investigar y remediar una violación crítica de políticas o un incidente de esclavitud moderna?\n1. Sí\n2. No\n3. No sé')
+        elif paso==38:
+            respuesta11b=verificar(command)
+            paso=39
+            bot.sendMessage(msg['from']['id'],'¿Crees que nuestros procesos nos han permitido identificar y remediar (o colaborar en la remediación de) incidentes de esclavitud moderna o explotación relacionada?\n1. Sí\n2. No\n3. No sé')
+        elif paso==39:
+            respuesta11c=verificar(command)
+
     if command=='foto':
         bot.sendPhoto(msg['from']['id'],photo=open('im1.jpg','rb'))
+        bot.sendMessage(msg['from']['id'],'...\n1. Sí\n2. No\n3. No sé')
 
 def verificar(command):
     if command=='1':
