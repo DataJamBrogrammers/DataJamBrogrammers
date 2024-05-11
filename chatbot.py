@@ -7,19 +7,22 @@ global comenzar
 comenzar=False
 global info
 info ={}
+global empresa
+empresa=""
 
 
 def handle(msg):
     global comenzar
     global paso
     global info
+    global empresa
     
     print(msg)
     command=msg['text']
 
     if command=='Hola' and comenzar==False:
         bot.sendMessage(msg['from']['id'], 'Hola '+ msg['from']['first_name'] +' soy Esclavont, tu asistente virtual')
-        bot.sendMessage(msg['from']['id'],'Para empezar dame tu ID de empleado:')
+        bot.sendMessage(msg['from']['id'],'Para empezar en que empresa trabajas?:')
         
         
     elif command in ["comenzar","Comenzar","start","Start"] or comenzar:
@@ -148,7 +151,7 @@ def handle(msg):
             paso=27
             bot.sendMessage(msg['from']['id'],'Módulo 8: Compromiso de proveedores y debida diligencia')
             bot.sendMessage(msg['from']['id'],'Nos gustaría conocer tu percepción sobre cómo nuestra empresa evalúa y maneja los riesgos de esclavitud moderna en nuestra cadena de suministro')
-            bot.sendMessage(msg['from']['id'],'¿Sabes si hacemos preguntas sobre las prácticas laborales y políticas de nuestros proveedores?')
+            bot.sendMessage(msg['from']['id'],'¿Sabes si hacemos preguntas sobre las prácticas laborales y políticas de nuestros proveedores?\n1. Sí\n2. No\n3. No sé')
         elif paso==27:
             verificar("respuesta8a",command)
             paso=28
@@ -172,7 +175,7 @@ def handle(msg):
         elif paso==32:
             verificar("respuesta8f",command)
             paso=33
-            bot.sendMessage(msg['from']['id'],'Módulo 9: 9. Prácticas de compra')
+            bot.sendMessage(msg['from']['id'],'Módulo 9: Prácticas de compra')
             bot.sendMessage(msg['from']['id'],'En relación con nuestras prácticas de compra, como los precios de los contratos, las previsiones y los incentivos a proveedores, ¿crees que estas prácticas podrían aumentar los riesgos para los trabajadores de nuestros proveedores?\n1. Sí\n2. No\n3. No sé')
         elif paso==33:
             verificar("respuesta9",command)
@@ -205,18 +208,16 @@ def handle(msg):
         elif paso==39:
             verificar("respuesta11c",command)
             #convert info to csv
-            with open(str(id)+'.csv','w') as f:
+            with open(empresa+'.csv','a') as f:
                 for key in info.keys():
-                    f.write("%s,%s\n"%(key,info[key]))
+                    f.write("%s;"%(info[key]))
+                f.write("\n")
             paso=0
     else:
-        id = command
-        print(id)
+        empresa = command
+        # print(empresa)
         bot.sendMessage(msg['from']['id'], 'Para comenzar la encuesta escribe "Comenzar"')
     
-    if command=='foto':
-        bot.sendPhoto(msg['from']['id'],photo=open('im1.jpg','rb'))
-        bot.sendMessage(msg['from']['id'],'...\n1. Sí\n2. No\n3. No sé')
     
 
 def verificar(id, command):
@@ -233,57 +234,6 @@ def verificar(id, command):
 bot = telepot.Bot('7187218614:AAH8gD1WZBBCivg5yBYSFXRpSzfYZ0GNPG4')
 MessageLoop(bot,handle).run_forever()
 
-
-# global respuesta1a, respuesta1b, respuesta2, respuesta3a, respuesta3b, respuesta4a, respuesta4b, respuesta4c, respuesta4d, respuesta5a, respuesta5b, respuesta6a, respuesta6b, respuesta6c, respuesta7a, respuesta7b, respuesta7c, respuesta7d, respuesta7e, respuesta7f, respuesta7g, respuesta7h, respuesta7i, respuesta7j, respuesta7k, respuesta7l, respuesta8a, respuesta8b, respuesta8c, respuesta8d, respuesta8e, respuesta8f, respuesta9, respuesta10a, respuesta10b, respuesta10c, respuesta11a, respuesta11b, respuesta11c
-# respuesta1a = None
-# respuesta1b = None
-
-# respuesta2 = None
-
-# respuesta3a = None
-# respuesta3b = None
-
-# respuesta4a = None
-# respuesta4b = None
-# respuesta4c = None
-# respuesta4d = None
-
-# respuesta5a = None
-# respuesta5b = None
-
-# respuesta6a = None
-# respuesta6b = None
-# respuesta6c = None
-
-# respuesta7a = None
-# respuesta7b = None
-# respuesta7c = None
-# respuesta7d = None
-# respuesta7e = None
-# respuesta7f = None
-# respuesta7g = None
-# respuesta7h = None
-# respuesta7i = None
-# respuesta7j = None
-# respuesta7k = None
-# respuesta7l = None
-
-# respuesta8a = None
-# respuesta8b = None
-# respuesta8c = None
-# respuesta8d = None
-# respuesta8e = None
-# respuesta8f = None
-
-# respuesta9 = None
-
-# respuesta10a = None
-# respuesta10b = None
-# respuesta10c = None
-
-# respuesta11a = None
-# respuesta11b = None
-# respuesta11c = None
 
 
 
