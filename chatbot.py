@@ -20,8 +20,8 @@ def handle(msg):
     print(msg)
     command=msg['text']
 
-    if command=='Hola' and comenzar==False:
-        bot.sendMessage(msg['from']['id'], 'Hola '+ msg['from']['first_name'] +' soy Esclavont, tu asistente virtual')
+    if command in ['Hola', '/start'] and comenzar==False:
+        bot.sendMessage(msg['from']['id'], 'Hola '+ msg['from']['first_name'] +' soy LiberBot, tu asistente virtual')
         bot.sendMessage(msg['from']['id'],'Para empezar en que empresa trabajas?:')
         
         
@@ -207,6 +207,7 @@ def handle(msg):
             bot.sendMessage(msg['from']['id'],'¿Crees que nuestros procesos nos han permitido identificar y remediar (o colaborar en la remediación de) incidentes de esclavitud moderna o explotación relacionada?\n1. Sí\n2. No\n3. No sé')
         elif paso==39:
             verificar("respuesta11c",command)
+            bot.sendMessage(msg['from']['id'],'Gracias por completar la encuesta!')
             #convert info to csv
             with open(empresa+'.csv','a') as f:
                 for key in info.keys():
@@ -231,7 +232,7 @@ def verificar(id, command):
         info[id]="Inseguro"
         return "Inseguro"
 
-bot = telepot.Bot('7187218614:AAH8gD1WZBBCivg5yBYSFXRpSzfYZ0GNPG4')
+bot = telepot.Bot('7161407811:AAGEOdT_CTomFbMMrkTI4s7vuOZlhefRYok')
 MessageLoop(bot,handle).run_forever()
 
 
